@@ -1,0 +1,310 @@
+学习网站：
+http://javascript.ruanyifeng.com/bom/ajax.html
+
+
+PS：
+快捷键：
+Ctrl+Alt+0:图片 100%
+Ctrl+c  and Ctrl+n  : 新建图片
+
+
+项目使用到的技术：
+框架：hibernate+springMVC+spring
+技术点：
+前段：requireJs，bootstrap，JavaScript，jQuery，ajax，json，template（模板加载）,velocity，jsp(jstl+EL表达式,servlet)，html，css，seaJs,commonJs
+后端：SQL（Oracle+Mysql）+java
+
+
+思维导图快捷键：
+
+CTRL + F3: 收拢所有主题 Alt + F3: 收拢选中主题 F3: 锁定主题 CTRL + D: 在不同级别的主题中浏览
+
+Shift + Alt + (0-9): 显示选中主题的 0-9 级别的详细内容 Shift + Alt + A: 显示选中主题的所有界别的详细内容
+
+F4: 仅仅显示分支 其他热键 CTRL + F1: 显示或者隐藏工具栏 CTRL + Z: 撤销操作 CTRL + Y: 重复操作
+
+CTRL + A: 全选 CTRL + Shift + A: 选择所有同级项 CTRL + C: 复制 CTRL + V: 黏贴 F7: 拼写检查
+
+Insert or CTRL + Enter: 添加副主题
+
+Enter: 添加同级主题（向下）
+
+Shift + Enter: 添加同级主题（向上）
+
+CTRL + Shift + Insert: 添加上级主题
+
+CTRL + Shift + Enter: 添加说明
+
+CTRL + Shift + B: 添加边框 
+
+
+idea快捷键：
+
+Ctrl＋[或]可以跳到大括号的开头结尾
+
+Ctrl+E，最近的文件
+
+Ctrl+Shift+E，最近更改的文件
+
+Ctrl+F12，可以显示当前文件的结构
+
+Ctrl+Alt+L，格式化代码
+
+Ctrl+X，删除行
+Ctrl+D，复制行
+
+Ctrl+"+/-"，当前方法展开、折叠
+Ctrl+Shift+"+/-"，全部展开、折叠
+
+Ctrl+Shift+F8，查看断点
+
+webstorm快捷键：
+
+写代码，按Tab	生成代码
+
+同时写多个：鼠标左键+滚轮  或者 alt+鼠标左键
+
+EXCEL:
+
+快捷键：
+Alt+Enter:快速换行
+
+
+
+JS:
+
+var content = $("iframe").contents().find("body").text();//获取iframe里面的body
+$("#hiddenCon").val(content);
+
+保留两位小数：toFixed(2);
+
+onfocus='this.blur();
+
+追加： $(".Js_update_people").last().after(html);//排序
+
+数组遍历的集中方法：
+JS:
+forEach(function(item){}) 	IE中Array没有forEach这个方法，不支持
+for(var i=0;i<arr.length;i++)
+for(i in arr)		和java类似
+map()
+for(let i of arr)	ES6新增功能
+
+数组排序：
+[10111, 1101, 111].sort(function (a, b) {		//a,b表示数组中的任意两个元素
+  return a - b;
+})	
+简化一下：a-b输出从小到大排序，b-a输出从大到小排序。	
+
+
+var,let,const之间的区别：
+1.const定义的变量不可以修改，而且必须初始化。
+2.var定义的变量可以修改，如果不初始化会输出undefined，不会报错
+3.let是块级作用域，函数内部使用let定义后，对函数外部无影响。
+	
+
+ES6新增：
+1.Set:排除重复项
+2.Map:键值对集合	
+
+JQuery:
+$().each()	jQuery对象遍历
+$.each(arr,function(i,n){})		第一个参数是下标，第二个参数是值
+$.grey(arr,function(i){return i>4})		
+
+multiSelect插件：
+
+$('.joinPeople').multiselect('select', arrry_joinPeople);
+
+$('.competitionType option:selected').each(function() {
+                $(this).prop('selected', false);
+            })
+            $('.competitionType').multiselect('refresh');//multiselect 取消值
+
+select2插件:
+
+$(".select2_multiple").val(arr_people).trigger("change");//select2设置值
+ $(".select2_multiple").val(null).trigger("change");//select2 取消值
+
+
+计算时间：
+	var d1 = $("#beginTime").val();//开始时间
+            var d2 = $("#endTime").val();//结束时间
+            var timestamp1 = Date.parse(new Date(d1));
+            var timestamp2 = Date.parse(new Date(d2));
+            if (timestamp1 > timestamp2) {
+                alert("开始时间不能小于结束时间！");
+                return;
+            }
+
+
+submit提交延迟：
+$(":submit").button("loading");
+            setTimeout(function () {
+               $(":submit").button("reset");
+            },10000);
+
+
+js默认点击a标签：
+document.getElementById("image_generate").click();
+
+模板：
+var html = template.compile(tpl)(data);
+
+
+自定义对象：
+
+function makePerson(first, last) {
+    return {
+        first: first,
+        last: last
+    }
+}
+function personFullName(person) {
+    return person.first + ' ' + person.last;
+}
+function personFullNameReversed(person) {
+    return person.last + ', ' + person.first
+}
+s = makePerson("Simon", "Willison");
+personFullName(s); // Simon Willison
+personFullNameReversed(s); // Willison, Simon
+
+
+
+CSS（样式）：
+
+位置：style="position: relative;top:0.2em"
+长英文单词不换行问题：style="table-layout:fixed; word-break: break-all; "
+
+水平列表的底部对齐：
+display: table-cell; vertical-align: bottom;
+父元素：display: table-cell; 子元素：display: inline-block; 
+vertical-align: bottom;(两者都需要加)
+1.	/* 方案1：flex */
+2.	.parent{display: flex; align-items: flex-end;}
+align-items属性表示辅轴方向对齐方式为从下到上。
+
+hr(水平线)：height:1px;border:none;border-top:1px solid #555555;
+
+transition:css3过渡效果
+
+border：梯形
+    border-bottom: 35px solid #d35c61;
+    /* border-left: 0px solid transparent; */
+    border-right: 35px solid transparent;
+    width: 120px;
+
+
+
+
+Bootstrap:
+
+form-group:自带有行间距
+
+form表单：
+保持一行：class="form-horizontal "
+
+form-control:一整行，带有样式(input样式)
+control-label:文字靠右对齐(多出的)
+
+
+
+Java:
+
+项目相对路径寻址：
+String path = Config.getConfigParameter("dqimg", "../config.properties");
+
+springMVC:
+controller接收数组：@RequestParam(value = "arr") List<test> list
+
+设置结果集：criteria.setResultTransformer(Criteria.ROOT_ENTITY);
+排序：criteria.addOrder(Order.asc("bidNotice"));
+
+//剩余天数计算
+            Date beginTime = DateHelper.parse(conBeginTime, "yyyy-MM-dd");
+            Date endTime = DateHelper.parse(conEndTime, "yyyy-MM-dd");
+
+
+            long intervalMilli = endTime.getTime() - beginTime.getTime();
+
+            int days = (int) (intervalMilli / (24 * 60 * 60 * 1000));
+            dto.setSurplusDay(days);
+
+//时间区间 计算周末天数：
+        while(cal1.compareTo(cal2)<=0){  
+            if(cal1.get(Calendar.DAY_OF_WEEK)==1||cal1.get(Calendar.DAY_OF_WEEK)==7){  
+                holidays++;  
+            }  
+            cal1.add(Calendar.DAY_OF_YEAR,1);  
+              
+        }  
+
+
+
+sql查询：
+select MONTH(contract_begin_time) sale_month,sum(judge_money) judge_money  from ancon_sys_sale_contract  where contract_begin_time <date_format(now(),'%Y%m%d') GROUP BY sale_month 
+
+Sql:
+数据库调用函数：CALL usp_dynamic_total_report();
+
+
+callback && callback();
+先判断回调函数是否存在，如果存在，执行，如果直接写 callback();   当callback不存在时代码就会报错
+
+
+函数加括号与不加括号的区别：
+
+函数只要是要调用它进行执行的，都必须加括号。此时，函数实际上等于函数的返回值或者执行效果，当然，有些没有返回值，但已经执行了函数体内的行为，就是说，加括号的，就代表将会执行函数体代码。
+
+不加括号的，都是把函数名称作为函数的指针，一个函数的名称就是这个函数的指针，此时不是得到函数的结果，因为不会运行函数体代码。它只是传递了函数体所在的地址位置，在需要的时候好找到函数体去执行。
+
+例如window.onload=init;
+init函数并不会在这行代码时就执行，浏览器加载文档时这句话会被加载，会被告知文档加载完要执行哪个函数，但实际上没有当时就执行，等到整个文档加载完成之后才会通过init这个指针去执行init()。
+
+
+js == 与 === 区别
+
+1、对于string,number等基础类型，==和===是有区别的
+1）不同类型间比较，==之比较“转化成同一类型后的值”看“值”是否相等，===如果类型不同，其结果就是不等
+2）同类型比较，直接进行“值”比较，两者结果一样
+2、对于Array,Object等高级类型，==和===是没有区别的
+进行“指针地址”比较
+3、基础类型与高级类型，==和===是有区别的
+1）对于==，将高级转化为基础类型，进行“值”比较
+2）因为类型不同，===结果为false
+
+DOS命令：
+
+进入	cd
+某一盘	e:
+某一文件夹	cd github\firstGitRepository
+后退	cd..
+退回到盘符的根目录	cd /
+
+
+gitBash命令：
+
+进入	cd e:\github\firstGitRepository
+
+提交的注释	git commit -m '这是提交的注释'
+
+是否有文件未提交	git status
+
+查看文件内容修改	git diff a.txt
+
+查看历史记录(详细)		git log
+查看历史记录(简练)		git log –pretty=oneline
+
+版本回滚		git reset  –hard HEAD^
+
+查看内容		cat readme.txt	
+
+git操作流程：
+
+git init 初始化git仓库
+git add 将修改的文件添加到缓存区 git add .
+git commit 提交文件
+
+
+
