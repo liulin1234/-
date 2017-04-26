@@ -306,5 +306,13 @@ git init 初始化git仓库
 git add 将修改的文件添加到缓存区 git add .
 git commit 提交文件
 
+Mustache20178912
 
+Vue.js
+
+eslintrc:统一代码风格，避免低级错误
+
+devDependencies 是你开发时候用的库， 比如测试库，测试服务器之类的，在真实生产环境是不需要的。
+dependencies 是你生产环境需要的依赖库。
+如果你使用了一些构建工具，比如webpack之类的，打包的时候，是不会把dev库打进去的。
 
