@@ -305,6 +305,7 @@ git操作流程：
 git init 初始化git仓库
 git add 将修改的文件添加到缓存区 git add .
 git commit 提交文件
+git push 推送到remote(远程)仓库
 
 Mustache20178912
 
