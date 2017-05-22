@@ -1,0 +1,31 @@
+
+v-for:
+
+ <li v-for="(item,index) in goods" class="menu-item" :class="{'current':currentIndex === index}"></li>
+不能直接使用$index(1.0版本)，用index(2.0版本)
+
+ref=""
+
+给元素或子组件注册信息，引用信息将会注册在父组件的 $refs 对象上。如果在普通的 DOM 元素上使用，引用指向的就是 DOM 元素; 如果用在子组件上，引用就指向组件实例(vue实例)。并且是在组件渲染之后才能访问。
+
+v-el,$els(1.0版本) ref,$refs(2.0版本)，而且命名规则遵循驼峰命名法
+
+通过ref来获取DOM
+
+props:
+
+接收外部模板传来的属性
+
+data(){}:
+
+定义作为实例上的属性
+把一个普通 JavaScript 对象传给 Vue 实例的 data 选项，Vue 将遍历此对象所有的属性，并使用 Object.defineProperty 把这些属性全部转为 getter/setter。Object.defineProperty 是仅 ES5 支持，且无法 shim 的特性，这也就是为什么 Vue 不支持 IE8 以及更低版本浏览器的原因。
+
+vue 阻止冒泡：
+
+@click.stop.prevent
+
+父组件可以调用子组件方法，而子组件不能调用父组件方法
+
+
+
